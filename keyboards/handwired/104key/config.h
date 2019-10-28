@@ -33,10 +33,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* wiring: pinout and diodes */
 #define MATRIX_ROW_PINS { E6, D6, E7, B0, D5, B1, D4 }
-#define MATRIX_COL_PINS { B6, B7, B5, D0, B4, D1, B3, D2, B2, D3, D7, E0, C0, F1, C1, F2, C2, F3, E1, F4, F5, F6, F7 }
+#define MATRIX_COL_PINS {  B6, B7, B5, D0, B4, D1, B3, D2, B2, D3, D7, E0, C0, F1, C1, F2, C2, F3, E1, F4, F5, F6, F7 }
 #define UNUSED_PINS     { F0 } // D6 and E1 are the pins for the empty row/collumn
 // INDICATOR_PINS { C6, C5, C4 }
 #define DIODE_DIRECTION COL2ROW // black mark on diode is facing towards the row
+
+/* rotary encoder */
+#define ENCODER_RESOLUTION 4
+#define ENCODERS_PAD_A { E6 }
+#define ENCODERS_PAD_B { E7 }
 
 /* features */
 #define RETRO_TAPPING
