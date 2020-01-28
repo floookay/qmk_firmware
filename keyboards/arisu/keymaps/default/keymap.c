@@ -28,14 +28,16 @@ enum custom_keycodes {
 
 // Tap Dance Declarations
 enum {
-    _TD_PGUP = 0,
-    _TD_PGDN = 1,
-    _TD_HOME = 2,
-    _TD_END = 3
+    _TD_SYCL = 0,
+    _TD_PGUP = 1,
+    _TD_PGDN = 2,
+    _TD_HOME = 3,
+    _TD_END  = 4
 };
 
 #define MO_FN MO(_FUNCTION)
 #define SPC_FN LT(_FUNCTION, KC_SPC)
+#define TD_SYCL TD(_TD_SYCL)
 #define TD_PGUP TD(_TD_PGUP)
 #define TD_PGDN TD(_TD_PGDN)
 #define TD_HOME TD(_TD_HOME)
@@ -45,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT( /* Base */
     KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSLS, KC_GRV, KC_DEL,  \
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSPC,         TD_PGUP, \
-    KC_LGUI, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT,                   TD_PGDN, \
+    TD_SYCL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT,                   TD_PGDN, \
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,          KC_UP,                     \
     KC_LCTL,          KC_LALT,          KC_SPC,  MO_FN,            KC_SPC,           KC_RALT,                   KC_LEFT, KC_DOWN, KC_RGHT           \
   ),
@@ -63,7 +65,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Tap Dance Definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for L-Alt, twice for L-GUI
+    // Tap once for first parameter, twice for second
+    [_TD_SYCL] = ACTION_TAP_DANCE_DOUBLE(KC_LGUI, KC_CAPS),
+    [_TD_PGUP] = ACTION_TAP_DANCE_DOUBLE(KC_PGUP, LCTL(KC_PGUP)),
     [_TD_PGUP] = ACTION_TAP_DANCE_DOUBLE(KC_PGUP, LCTL(KC_PGUP)),
     [_TD_PGDN] = ACTION_TAP_DANCE_DOUBLE(KC_PGDN, LCTL(KC_PGDN)),
     [_TD_HOME] = ACTION_TAP_DANCE_DOUBLE(KC_HOME, LCTL(KC_HOME)),
