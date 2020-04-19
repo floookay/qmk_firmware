@@ -1,5 +1,5 @@
 /*
-Copyright 2019 Fate
+Copyright 2020 floookay
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -23,12 +23,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0x0000
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    Fate
-#define PRODUCT         arisu
-#define DESCRIPTION     alice counterpart keyboard
+#define MANUFACTURER    floookay
+#define PRODUCT         adelheid
+#define DESCRIPTION     75% alice clone
 
 /* key matrix size */
-#define MATRIX_ROWS 5
+#define MATRIX_ROWS 6
 #define MATRIX_COLS 15
 
 /*
@@ -41,7 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
 */
-#define MATRIX_ROW_PINS { D0, D1, D2, D3, D5 }
+#define MATRIX_ROW_PINS { F7, D0, D1, D2, D3, D5 }
 #define MATRIX_COL_PINS { F0, F1, E6, C7, C6, B6, D4, B1, B0, B7, B5, B4, D7, D6, B3 }
 #define UNUSED_PINS
 
@@ -80,7 +80,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #endif
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCE 5
 
 /* define if matrix has ghost (lacks anti-ghosting diodes) */
 //#define MATRIX_HAS_GHOST
