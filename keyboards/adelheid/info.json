@@ -6,6 +6,7 @@
     "height": 17.3,
     "layouts": {
         "LAYOUT": {
+            "key_count": 82,
             "layout": [
                 { "label": "F1", "x": 1.5, "y": 0.1 },
                 { "label": "F12", "x": 14, "y": 0.1 },
