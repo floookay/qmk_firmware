@@ -1,8 +1,8 @@
-# The default keymap for the adelheid
+# The default keymap for the Adelheid
 
 - ANSI QWERTY
 - split backspace
-- caps lock as super key
+- ctrl on caps lock with super on tap dance
 
 ![layout](https://github.com/floookay/adelheid/images/layout.png)
 
