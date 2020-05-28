@@ -1,8 +1,8 @@
 # 𝕬𝖉𝖊𝖑𝖍𝖊𝖎𝖉
 
-![Adelheid](https://raw.githubusercontent.com/floookay/img/master/adelheid/adelheid.png)
+![Adelheid](https://raw.githubusercontent.com/floookay/img/master/adelheid/adelheid.jpg)
 
-The Adelheid is a 75% Alice-like keyboard. It's a fork of the [Arisu](https://github.com/FateNozomi/arisu-pcb) by FateNozomi and open-source as well.
+The Adelheid is a 75% Alice-like keyboard. It's a fork of the [Arisu](https://github.com/FateNozomi/arisu-pcb) by FateNozomi and is open-source as well.
 
 * Keyboard Maintainer: [floookay](https://github.com/floookay)  
 * Hardware Supported: Adelheid PCB  
