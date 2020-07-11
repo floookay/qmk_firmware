@@ -33,7 +33,8 @@ enum {
     _TD_PGDN = 2,
     _TD_HOME = 3,
     _TD_END  = 4,
-    _TD_RSHC = 5
+    _TD_RSHC = 5,
+    _TD_PSCR = 6
 };
 
 #define MO_SEC MO(_SECONDARY)
@@ -43,6 +44,7 @@ enum {
 #define TD_HOME TD(_TD_HOME)
 #define TD_END TD(_TD_END)
 #define TD_RSHC TD(_TD_RSHC)
+#define TD_PSCR TD(_TD_PSCR)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
@@ -56,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_SECONDARY] = LAYOUT(
-    KC_SLEP, KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,           KC_PSCR, KC_VOLU, \
+    KC_SLEP, KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,           TD_PSCR, KC_VOLU, \
                                                                                                                                                     \
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, KC_INS,  BL_STEP, \
     _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______, _______, KC_DEL,           KC_MUTE, \
@@ -75,5 +77,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [_TD_PGDN] = ACTION_TAP_DANCE_DOUBLE(KC_PGDN, LCTL(KC_PGDN)),
     [_TD_HOME] = ACTION_TAP_DANCE_DOUBLE(KC_HOME, LCTL(KC_HOME)),
     [_TD_END]  = ACTION_TAP_DANCE_DOUBLE(KC_END,  LCTL(KC_END)),
-    [_TD_RSHC] = ACTION_TAP_DANCE_DOUBLE(KC_RSFT, KC_CAPS)
+    [_TD_RSHC] = ACTION_TAP_DANCE_DOUBLE(KC_RSFT, KC_CAPS),
+    [_TD_PSCR] = ACTION_TAP_DANCE_DOUBLE(KC_PSCR, LSFT(LGUI(KC_S))) // screenshot tool tap dance
 };
