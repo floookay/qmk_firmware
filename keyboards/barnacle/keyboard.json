@@ -6,6 +6,7 @@
     "bootloader_instructions": "Press the reset button on the Helios controller",
     "tags": ["ortho", "rgb", "60%", "OSH"],
     "development_board": "helios",
+    "pin_compatible": "elite_c",
     "features": {
         "bootmagic": true,
         "command": false,
@@ -15,7 +16,8 @@
         "nkro": true,
 
         "encoder": true,
-        "rgb_matrix": true
+        "rgb_matrix": true,
+        "oled": true
     },
     "diode_direction": "COL2ROW",
     "matrix_pins": {
@@ -25,6 +27,9 @@
     "rgb_matrix": {
         "center_point": [90,30],
         "driver": "ws2812",
+        "default": {
+            "on": true
+        },
         "layout": [
             {"flags": 4, "x": 11, "y": 0},
             {"flags": 4, "x": 12, "y": 0},
@@ -117,7 +122,7 @@
             {"flags": 4, "x": 14, "y": 4, "matrix": [4, 10]},
             {"flags": 4, "x": 15, "y": 4, "matrix": [4, 11]}
         ],
-        "sleep": true
+        "sleep": false
     },
     "encoder": {
         "rotary": [
