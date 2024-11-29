@@ -1,10 +1,10 @@
-// Copyright 2023 QMK
+// Copyright 2024 QMK
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
 
 enum custom_keycodes {
-    M_ARROW,
+    M_ARROW = SAFE_RANGE,
     M_THIS
 };
 
@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,              KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,              KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
         KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,              KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,              KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, MO(4),
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,              KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, LT(4, KC_MPLY),
         TG(3),   KC_LGUI, KC_LALT, MO(2),   KC_SPC,  KC_DEL,            KC_ENT,  KC_SPC,  MO(1),   KC_RALT, KC_APP,  KC_RCTL,
 
         KC_MPRV, KC_MPLY, KC_MNXT,
@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [1] = LAYOUT_all(
         _______, _______, _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______,
-        _______, _______, KC_PGDN, KC_UP,   KC_PGUP, _______,           _______, KC_PGDN, KC_UP,   KC_PGUP, _______, _______,
+        _______, _______, KC_PGUP, KC_UP,   KC_PGDN, _______,           _______, KC_PGUP, KC_UP,   KC_PGDN, _______, _______,
         _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,            KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  _______,
         _______, _______, _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______,
@@ -113,20 +113,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *    ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
      *    │Boo│   │   │   │   |   │ ┌───┬───┬───┐ │   │   │   │   │   │   |
      *  ┌─┴───┼───┼───┼───┼───┼───┤ |   |   |   | ├───┼───┼───┼───┼───┼───┴─┐
-     *  │     │RSU│RHU│RSU│RBU│   │ ├───┼───┼───┤ │   │   │   │   │   │     |
+     *  │     │RSU│RHU│RSU│RBU│   │ ├───┼───┼───┤ │   │MVU│MST│MVD│   │     |
      * ┌┴─────┼───┼───┼───┼───┼───┤ |   |   |   | ├───┼───┼───┼───┼───┼─────┴┐
-     * │      │   │RPV│RTG│RNX│   │ ├───┼───┼───┤ │   │   │   │   │   │      │
+     * │      │   │RPV│RTG│RNX│   │ ├───┼───┼───┤ │   |MPV|PLY|MNX|   │      │
      * ├──────┼───┼───┼───┼───┼───┤ |   |   |   | ├───┼───┼───┼───┼───┼────┬─┴─┐
-     * │      │RSD│RHD│RSD│RBD│   │ └───┴───┴───┘ │   │   │   │   │   │    |   |
+     * │      │RSD│RHD│RSD│RBD│   │ └───┴───┴───┘ │   │   │MST│   │   │    |   |
      * ├────┬─┴──┬┴──┬┴───┼───┴───┴┬───┐     ┌───┬┴───┴──┬┴───┼───┴┬──┴─┬──┴──┬┘
      * │    │    │   │    │        │   │     │   │       │    │    │    │     │
      * └────┴────┴───┴────┴────────┴───┘     └───┴───────┴────┴────┴────┴─────┘
      */
     [4] = LAYOUT_all(
         QK_BOOT, _______, _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______,
-        _______, RGB_SAI, RGB_HUI, RGB_SPI, RGB_VAI, _______,           _______, _______, _______, _______, _______, _______,
-        _______, _______, RGB_RMOD,RGB_TOG, RGB_MOD, _______,           _______, _______, _______, _______, _______, _______,
-        _______, RGB_SAD, RGB_HUD, RGB_SPD, RGB_VAD, _______,           _______, _______, _______, _______, _______, _______, _______,
+        _______, RGB_SAI, RGB_HUI, RGB_SPI, RGB_VAI, _______,           _______, KC_VOLU, KC_MUTE, KC_VOLD, _______, _______,
+        _______, _______, RGB_RMOD,RGB_TOG, RGB_MOD, _______,           _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______,
+        _______, RGB_SAD, RGB_HUD, RGB_SPD, RGB_VAD, _______,           _______, _______, KC_MSTP, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______,
 
         _______, _______, _______,
@@ -163,10 +163,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
-        if(keycode == M_ARROW) {
-            SEND_STRING("->");
-        } else if(keycode == M_THIS) {
-            SEND_STRING("$this->");
+        switch(keycode) {
+            case M_ARROW:
+                SEND_STRING("->");
+                break;
+            case M_THIS:
+                SEND_STRING("$this->");
+                break;
+            default:
+                break;
         }
     }
     return true;
