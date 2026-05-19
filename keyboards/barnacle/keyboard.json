@@ -17,7 +17,8 @@
         "rgb_matrix": true,
 
         "encoder": true,
-        "oled": true
+        "oled": true,
+        "wpm": true
     },
     "diode_direction": "COL2ROW",
     "matrix_pins": {
