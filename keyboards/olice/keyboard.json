@@ -14,7 +14,7 @@
         "oled": true
     },
     "matrix_pins": {
-        "cols": ["GP0", "GP1", "GP4", "GP5", "GP6", "GP7", "GP29", "GP28", "GP27", "GP26", "GP22", "GP20"],
+        "cols": ["GP20", "GP22", "GP26", "GP27", "GP28", "GP29", "GP7", "GP6", "GP5", "GP4", "GP1", "GP0"],
         "rows": ["GP8", "GP9", "GP23", "GP21", "GP12", "GP13", "GP14", "GP15"]
     },
     "url": "https://github.com/floookay/olice",
