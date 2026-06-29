@@ -83,6 +83,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 #ifdef OLED_ENABLE
+oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
+    return OLED_ROTATION_270;
+}
 bool oled_task_user(void) {
     oled_write_ln_P(PSTR("olice"), false);
     return false;
