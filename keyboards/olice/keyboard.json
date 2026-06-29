@@ -15,7 +15,7 @@
     },
     "matrix_pins": {
         "cols": ["GP20", "GP22", "GP26", "GP27", "GP28", "GP29", "GP7", "GP6", "GP5", "GP4", "GP1", "GP0"],
-        "rows": ["GP8", "GP9", "GP23", "GP21", "GP12", "GP13", "GP14", "GP15"]
+        "rows": ["GP8", "GP9", "GP23", "GP21", "GP15", "GP14", "GP13", "GP12"]
     },
     "url": "https://github.com/floookay/olice",
     "usb": {
