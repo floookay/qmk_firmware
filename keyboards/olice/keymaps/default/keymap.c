@@ -87,7 +87,9 @@ oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
     return OLED_ROTATION_270;
 }
 bool oled_task_user(void) {
-    oled_write_ln_P(PSTR("olice"), false);
+    for (int i = 0; i < 8; i++) {
+        oled_write_ln_P(PSTR("olice"), false);
+    }
     return false;
 }
 #endif
